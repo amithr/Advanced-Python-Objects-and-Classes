@@ -20,10 +20,30 @@ class Pet:
     def change_name(self, new_name):
         self.name = new_name
     
+    def get_diet(self):
+        return ['rice']
+    
     # Static Function (used as a tool or utility)
     def get_list_of_species():
         species = ["tiger", "dog", "cat", "octopus", "giraffe"]
         return species
+    
+
+class Tiger(Pet):
+    def __init__(self, region, name, species):
+        super.__init__(name, species)
+        self.region = region
+        self.handler = ''
+    
+    def set_handler(self, handler_name):
+        self.handler = handler_name
+        return self.handler
+
+tiger_1 = Tiger('Siberia')
+print(tiger_1.name)
+print(tiger_1.region)
+tiger_1.add_medical_condition('cold')
+tiger_1.set_handler('Amith')
 
 
 pet_1 = Pet("Alberto", "tiger")

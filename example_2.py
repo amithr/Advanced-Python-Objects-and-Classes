@@ -1,9 +1,13 @@
 class User:
     def __init__(self, name, employee_id, date_hired, salary):
-        return
+        self.name = name
+        self.employee_id = employee_id
+        self.data_hired = date_hired
+        self.salary = salary
 
 class Manager(User):
-    def __init__(self):
+    def __init__(self, name, employee_id, date_hired, salary):
+        super.__init__(name, employee_id, date_hired, salary)
         self.position = "manager"
         self.employees = []
     
@@ -13,10 +17,11 @@ class Manager(User):
         
     
 class Driver(User):
-    def __init__(self, drivers_license_num, num_of_routes):
+    def __init__(self, name, employee_id, date_hired, salary, num_of_routes):
+        super.__init__(name, employee_id, date_hired, salary, num_of_routes)
         self.position = "driver"
         self.trainees = []
-        self.num_of_routes = 0
+        self.num_of_routes = num_of_routes
         self.num_of_miles = 0
     
     # Function overloading
